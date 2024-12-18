@@ -1,9 +1,15 @@
-from flask import Flask
+from flask import Flask, request
+import logging
 
 app = Flask(__name__)
 
+# Configuración básica del logger
+logging.basicConfig(level=logging.INFO)
+
 @app.route('/')
 def hello_world():
+    # Log de la petición
+    app.logger.info(f'Recibida petición desde: {request.remote_addr}')
     return 'Hola, mundo!'
 
 if __name__ == '__main__':
