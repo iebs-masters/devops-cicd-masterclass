@@ -2,6 +2,16 @@ provider "aws" {
   region = "eu-west-3"
 }
 
+terraform {
+  backend "remote" {
+    organization = "Cotan"
+
+    workspaces {
+      name = "DevOpsCICDMasterclass"
+    }
+  }
+}
+
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
