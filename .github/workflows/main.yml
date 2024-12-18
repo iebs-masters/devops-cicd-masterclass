@@ -37,7 +37,7 @@ jobs:
         working-directory: ./terraform
 
     env:
-      TF_CLOUD_TOKEN: ${{ secrets.TF_CLOUD_TOKEN }}
+      TERRAFORM_CLOUD_TOKEN: ${{ secrets.TF_CLOUD_TOKEN }}
 
     steps:
     - name: Checkout code
